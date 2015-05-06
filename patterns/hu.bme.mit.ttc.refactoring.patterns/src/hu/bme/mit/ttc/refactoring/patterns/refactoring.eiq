@@ -1,0 +1,28 @@
+package hu.bme.mit.ttc.refactoring.patterns
+
+import "platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore"
+
+pattern classes(className, childClassName1, childClassName2, method) {
+	TMethod.tName(method1, method);
+	
+	TClass.childClasses(class, childClass1);
+	TClass.childClasses(class, childClass2);
+
+	TClass.tName(class, className);
+	TClass.tName(childClass1, childClassName1);
+	TClass.tName(childClass2, childClassName2);
+	
+	find methods(childClass1, method1);
+	find methods(childClass2, method2);
+	
+	// the parent class does not have method
+	neg find methods(class, method1);
+
+	check(childClassName1 < childClassName2);
+	method1 == method2;
+}
+
+pattern methods(class, method) {
+	TClass.signature(class, signature);
+	TMethodSignature.method(signature, method);	
+}

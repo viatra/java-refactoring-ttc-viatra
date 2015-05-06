@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.ttc.refactoring.patterns
+Bundle-SymbolicName: hu.bme.mit.ttc.refactoring.patterns;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Export-Package: hu.bme.mit.ttc.refactoring.patterns,
+ hu.bme.mit.ttc.refactoring.patterns.util
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.incquery.runtime,
+ org.eclipse.xtext.xbase.lib,
+ hu.bme.mit.ttc.refactoring.model;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.log4j
