@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.ttc.refactoring.model/src-gen" modelPluginID="hu.bme.mit.ttc.refactoring.model"
+    modelName="TypeGraphBasic" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true">
+  <foreignModel>TypeGraphBasic.ecore</foreignModel>
+  <genPackages prefix="TypeGraphBasic" disposableProviderFactory="true" ecorePackage="TypeGraphBasic.ecore#/"
+      publicationLocation="">
+    <genClasses ecoreClass="TypeGraphBasic.ecore#//TClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TClass/parentClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TClass/childClasses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TClass/signature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TClass/package"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TClass/defines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TypeGraphBasic.ecore#//TClass/tName"/>
+    </genClasses>
+    <genClasses ecoreClass="TypeGraphBasic.ecore#//TField">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TField/signatures"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TypeGraphBasic.ecore#//TField/tName"/>
+    </genClasses>
+    <genClasses ecoreClass="TypeGraphBasic.ecore#//TFieldDefinition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TFieldDefinition/hiding"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TFieldDefinition/hiddenBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TFieldDefinition/signature"/>
+    </genClasses>
+    <genClasses ecoreClass="TypeGraphBasic.ecore#//TFieldSignature">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TFieldSignature/definitions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TFieldSignature/field"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TFieldSignature/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TypeGraphBasic.ecore#//TMember">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMember/access"/>
+    </genClasses>
+    <genClasses ecoreClass="TypeGraphBasic.ecore#//TMethod">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethod/signatures"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TypeGraphBasic.ecore#//TMethod/tName"/>
+    </genClasses>
+    <genClasses ecoreClass="TypeGraphBasic.ecore#//TMethodDefinition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethodDefinition/signature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethodDefinition/overriding"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethodDefinition/overriddenBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethodDefinition/overloading"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethodDefinition/overloadedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethodDefinition/returnType"/>
+    </genClasses>
+    <genClasses ecoreClass="TypeGraphBasic.ecore#//TMethodSignature">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethodSignature/method"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethodSignature/definitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TMethodSignature/paramList"/>
+    </genClasses>
+    <genClasses ecoreClass="TypeGraphBasic.ecore#//TPackage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TPackage/containedClasses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TPackage/subpackage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TPackage/parent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TypeGraphBasic.ecore#//TPackage/tName"/>
+    </genClasses>
+    <genClasses ecoreClass="TypeGraphBasic.ecore#//TypeGraph">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TypeGraph/packages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TypeGraph/methods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TypeGraph/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TypeGraphBasic.ecore#//TypeGraph/classes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TypeGraphBasic.ecore#//TypeGraph/tName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="TypeGraphBasic.ecore#//TSignature"/>
+  </genPackages>
+</genmodel:GenModel>

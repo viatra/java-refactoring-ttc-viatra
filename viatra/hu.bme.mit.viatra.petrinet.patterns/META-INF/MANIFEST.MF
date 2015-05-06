@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Patterns
+Bundle-SymbolicName: hu.bme.mit.viatra.petrinet.patterns;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Export-Package: hu.bme.mit.viatra.petrinet.patterns,
+ hu.bme.mit.viatra.petrinet.patterns.util
+Require-Bundle: hu.bme.mit.viatra.petrinet.model,
+ org.eclipse.incquery.runtime
+Import-Package: org.apache.log4j
