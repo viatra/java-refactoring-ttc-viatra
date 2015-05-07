@@ -2,27 +2,72 @@ package hu.bme.mit.ttc.refactoring.patterns
 
 import "platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore"
 
-pattern classes(className, childClassName1, childClassName2, method) {
-	TMethod.tName(method1, method);
-	
-	TClass.childClasses(class, childClass1);
-	TClass.childClasses(class, childClass2);
+// Create Superclass refactoring, case (a)
 
-	TClass.tName(class, className);
-	TClass.tName(childClass1, childClassName1);
-	TClass.tName(childClass2, childClassName2);
-	
-	find methods(childClass1, method1);
-	find methods(childClass2, method2);
-	
-	// the parent class does not have method
-	neg find methods(class, method1);
-
-	check(childClassName1 < childClassName2);
-	method1 == method2;
+pattern csANames(child1Name, childNName) {
+	TClass.tName(child1, child1Name);
+	TClass.tName(childN, childNName);
+	find csA(child1, childN);
 }
 
-pattern methods(class, method) {
-	TClass.signature(class, signature);
-	TMethodSignature.method(signature, method);	
+// warning: this creates a Cartesian product
+
+pattern csA(child1, childN) {
+	TClass(child1);
+	TClass(childN);
+	neg find commonParent(_, child1, childN);
+}
+
+// Create Superclass refactoring, case (b)
+
+pattern csBNames(parentName, child1Name, childNName) {
+	TClass.tName(parent, parentName);
+	TClass.tName(child1, child1Name);
+	TClass.tName(childN, childNName);
+	find csB(parent, child1, childN);
+}
+
+pattern csB(parent, child1, childN) {
+	find commonParent(parent, child1, childN);
+}
+
+// utility patterns
+
+pattern commonParent(parent, child1, childN) {
+	TClass.parentClass(parent, child1);
+	TClass.parentClass(parent, childN);	
+}
+
+// for checking the abscence of the new_superclass object
+
+pattern classes(class) {
+	TClass(class);
+}
+
+
+// Pull Up Method refactoring
+
+pattern pumNames(parentName, child1Name, childNName) {
+	find pum(parent, child1, childN);
+	TClass.tName(parent, parentName);
+	TClass.tName(child1, child1Name);
+	TClass.tName(childN, childNName);
+
+	check(child1Name < childNName);
+}
+
+pattern pum(parent, child1, childN) {
+	TClass.childClasses(parent, child1);
+	TClass.childClasses(parent, childN);
+
+	TClass.defines(child1, definition1);
+	TClass.defines(childN, definitionN);
+
+	TMethodDefinition.signature(definition1, signature);
+	TMethodDefinition.signature(definitionN, signature);
+	neg find hasMethod(parent, signature);
+}
+
+pattern hasMethod(class, methodSignature) {
+	TClass.signature(class, methodSignature);
 }
