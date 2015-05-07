@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TypeGraphBasic:TypeGraph xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TypeGraphBasic="platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore">
+  <packages containedClasses="//@classes.6 //@classes.1 //@classes.0" tName="example01"/>
+  <methods tName="ChildClass1"/>
+  <methods tName="method">
+    <signatures definitions="//@classes.0/@defines.2 //@classes.6/@defines.1" paramList="//@classes.2 //@classes.3"/>
+  </methods>
+  <methods tName="main">
+    <signatures definitions="//@classes.0/@defines.3" paramList="//@classes.5"/>
+  </methods>
+  <methods tName="ChildClass2"/>
+  <methods tName="ParentClass">
+    <signatures definitions="//@classes.0/@defines.1 //@classes.6/@defines.0 //@classes.1/@defines.0"/>
+  </methods>
+  <fields tName="bela">
+    <signatures definitions="//@classes.0/@defines.0" type="//@classes.2"/>
+  </fields>
+  <classes parentClass="//@classes.1" signature="//@methods.4/@signatures.0 //@fields.0/@signatures.0 //@methods.2/@signatures.0 //@methods.1/@signatures.0" package="//@packages.0" tName="Lexample01/ChildClass1;">
+    <defines xsi:type="TypeGraphBasic:TFieldDefinition" signature="//@fields.0/@signatures.0"/>
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@methods.4/@signatures.0"/>
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@methods.1/@signatures.0" returnType="//@classes.4"/>
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@methods.2/@signatures.0" returnType="//@classes.4"/>
+  </classes>
+  <classes childClasses="//@classes.6 //@classes.0" signature="//@methods.4/@signatures.0" package="//@packages.0" tName="Lexample01/ParentClass;">
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@methods.4/@signatures.0"/>
+  </classes>
+  <classes tName="Ljava/lang/String;"/>
+  <classes tName="I"/>
+  <classes tName="V"/>
+  <classes tName="[Ljava/lang/String;"/>
+  <classes parentClass="//@classes.1" signature="//@methods.4/@signatures.0 //@methods.1/@signatures.0" package="//@packages.0" tName="Lexample01/ChildClass2;">
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@methods.4/@signatures.0"/>
+    <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@methods.1/@signatures.0" returnType="//@classes.4"/>
+  </classes>
+</TypeGraphBasic:TypeGraph>

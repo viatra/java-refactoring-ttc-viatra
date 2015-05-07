@@ -23,10 +23,10 @@ import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * A pattern group formed of all patterns defined in refactoring.eiq.
+ * A pattern group formed of all patterns defined in RefactoringQueries.eiq.
  * 
  * <p>Use the static instance as any {@link org.eclipse.incquery.runtime.api.IPatternGroup}, to conveniently prepare
- * an EMF-IncQuery engine for matching all patterns originally defined in file refactoring.eiq,
+ * an EMF-IncQuery engine for matching all patterns originally defined in file RefactoringQueries.eiq,
  * in order to achieve better performance than one-by-one on-demand matcher initialization.
  * 
  * <p> From package hu.bme.mit.ttc.refactoring.patterns, the group contains the definition of the following patterns: <ul>
@@ -45,7 +45,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  */
 @SuppressWarnings("all")
-public final class Refactoring extends BaseGeneratedPatternGroup {
+public final class RefactoringQueries extends BaseGeneratedPatternGroup {
   /**
    * Access the pattern group.
    * 
@@ -53,16 +53,16 @@ public final class Refactoring extends BaseGeneratedPatternGroup {
    * @throws IncQueryException if there was an error loading the generated code of pattern specifications
    * 
    */
-  public static Refactoring instance() throws IncQueryException {
+  public static RefactoringQueries instance() throws IncQueryException {
     if (INSTANCE == null) {
-    	INSTANCE = new Refactoring();
+    	INSTANCE = new RefactoringQueries();
     }
     return INSTANCE;
   }
   
-  private static Refactoring INSTANCE;
+  private static RefactoringQueries INSTANCE;
   
-  private Refactoring() throws IncQueryException {
+  private RefactoringQueries() throws IncQueryException {
     querySpecifications.add(CsANamesQuerySpecification.instance());
     querySpecifications.add(CsAQuerySpecification.instance());
     querySpecifications.add(CsBNamesQuerySpecification.instance());

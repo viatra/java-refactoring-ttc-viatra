@@ -106,6 +106,9 @@ public final class PumNamesQuerySpecification extends BaseGeneratedEMFQuerySpeci
       	PVariable var_parent = body.getOrCreateVariableByName("parent");
       	PVariable var_child1 = body.getOrCreateVariableByName("child1");
       	PVariable var_childN = body.getOrCreateVariableByName("childN");
+      	PVariable var___0_ = body.getOrCreateVariableByName("_<0>");
+      	PVariable var___1_ = body.getOrCreateVariableByName("_<1>");
+      	PVariable var___2_ = body.getOrCreateVariableByName("_<2>");
       	PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       	PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
       	PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
@@ -116,7 +119,7 @@ public final class PumNamesQuerySpecification extends BaseGeneratedEMFQuerySpeci
       				
       		new ExportedParameter(body, var_childNName, "childNName")
       	));
-      	new PositivePatternCall(body, new FlatTuple(var_parent, var_child1, var_childN), PumQuerySpecification.instance().getInternalQueryRepresentation());
+      	new PositivePatternCall(body, new FlatTuple(var_parent, var_child1, var_childN, var___0_, var___1_, var___2_), PumQuerySpecification.instance().getInternalQueryRepresentation());
       	new TypeConstraint(body, new FlatTuple(var_parent), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore", "TClass")));
       	new TypeConstraint(body, new FlatTuple(var_parent, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore", "TClass", "tName")));
       	new Equality(body, var__virtual_0_, var_parentName);

@@ -1,6 +1,8 @@
 package hu.bme.mit.ttc.refactoring.patterns;
 
 import TypeGraphBasic.TClass;
+import TypeGraphBasic.TMethodDefinition;
+import TypeGraphBasic.TMethodSignature;
 import hu.bme.mit.ttc.refactoring.patterns.util.PumQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
@@ -29,12 +31,21 @@ public abstract class PumMatch extends BasePatternMatch {
   
   private TClass fChildN;
   
-  private static List<String> parameterNames = makeImmutableList("parent", "child1", "childN");
+  private TMethodDefinition fDefinition1;
   
-  private PumMatch(final TClass pParent, final TClass pChild1, final TClass pChildN) {
+  private TMethodDefinition fDefinitionN;
+  
+  private TMethodSignature fSignature;
+  
+  private static List<String> parameterNames = makeImmutableList("parent", "child1", "childN", "definition1", "definitionN", "signature");
+  
+  private PumMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
     this.fParent = pParent;
     this.fChild1 = pChild1;
     this.fChildN = pChildN;
+    this.fDefinition1 = pDefinition1;
+    this.fDefinitionN = pDefinitionN;
+    this.fSignature = pSignature;
   }
   
   @Override
@@ -42,6 +53,9 @@ public abstract class PumMatch extends BasePatternMatch {
     if ("parent".equals(parameterName)) return this.fParent;
     if ("child1".equals(parameterName)) return this.fChild1;
     if ("childN".equals(parameterName)) return this.fChildN;
+    if ("definition1".equals(parameterName)) return this.fDefinition1;
+    if ("definitionN".equals(parameterName)) return this.fDefinitionN;
+    if ("signature".equals(parameterName)) return this.fSignature;
     return null;
   }
   
@@ -57,6 +71,18 @@ public abstract class PumMatch extends BasePatternMatch {
     return this.fChildN;
   }
   
+  public TMethodDefinition getDefinition1() {
+    return this.fDefinition1;
+  }
+  
+  public TMethodDefinition getDefinitionN() {
+    return this.fDefinitionN;
+  }
+  
+  public TMethodSignature getSignature() {
+    return this.fSignature;
+  }
+  
   @Override
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
@@ -70,6 +96,18 @@ public abstract class PumMatch extends BasePatternMatch {
     }
     if ("childN".equals(parameterName) ) {
     	this.fChildN = (TypeGraphBasic.TClass) newValue;
+    	return true;
+    }
+    if ("definition1".equals(parameterName) ) {
+    	this.fDefinition1 = (TypeGraphBasic.TMethodDefinition) newValue;
+    	return true;
+    }
+    if ("definitionN".equals(parameterName) ) {
+    	this.fDefinitionN = (TypeGraphBasic.TMethodDefinition) newValue;
+    	return true;
+    }
+    if ("signature".equals(parameterName) ) {
+    	this.fSignature = (TypeGraphBasic.TMethodSignature) newValue;
     	return true;
     }
     return false;
@@ -90,6 +128,21 @@ public abstract class PumMatch extends BasePatternMatch {
     this.fChildN = pChildN;
   }
   
+  public void setDefinition1(final TMethodDefinition pDefinition1) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    this.fDefinition1 = pDefinition1;
+  }
+  
+  public void setDefinitionN(final TMethodDefinition pDefinitionN) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    this.fDefinitionN = pDefinitionN;
+  }
+  
+  public void setSignature(final TMethodSignature pSignature) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    this.fSignature = pSignature;
+  }
+  
   @Override
   public String patternName() {
     return "hu.bme.mit.ttc.refactoring.patterns.pum";
@@ -102,12 +155,12 @@ public abstract class PumMatch extends BasePatternMatch {
   
   @Override
   public Object[] toArray() {
-    return new Object[]{fParent, fChild1, fChildN};
+    return new Object[]{fParent, fChild1, fChildN, fDefinition1, fDefinitionN, fSignature};
   }
   
   @Override
   public PumMatch toImmutable() {
-    return isMutable() ? newMatch(fParent, fChild1, fChildN) : this;
+    return isMutable() ? newMatch(fParent, fChild1, fChildN, fDefinition1, fDefinitionN, fSignature) : this;
   }
   
   @Override
@@ -117,7 +170,13 @@ public abstract class PumMatch extends BasePatternMatch {
     
     result.append("\"child1\"=" + prettyPrintValue(fChild1) + ", ");
     
-    result.append("\"childN\"=" + prettyPrintValue(fChildN)
+    result.append("\"childN\"=" + prettyPrintValue(fChildN) + ", ");
+    
+    result.append("\"definition1\"=" + prettyPrintValue(fDefinition1) + ", ");
+    
+    result.append("\"definitionN\"=" + prettyPrintValue(fDefinitionN) + ", ");
+    
+    result.append("\"signature\"=" + prettyPrintValue(fSignature)
     );
     return result.toString();
   }
@@ -129,6 +188,9 @@ public abstract class PumMatch extends BasePatternMatch {
     result = prime * result + ((fParent == null) ? 0 : fParent.hashCode());
     result = prime * result + ((fChild1 == null) ? 0 : fChild1.hashCode());
     result = prime * result + ((fChildN == null) ? 0 : fChildN.hashCode());
+    result = prime * result + ((fDefinition1 == null) ? 0 : fDefinition1.hashCode());
+    result = prime * result + ((fDefinitionN == null) ? 0 : fDefinitionN.hashCode());
+    result = prime * result + ((fSignature == null) ? 0 : fSignature.hashCode());
     return result;
   }
   
@@ -155,6 +217,12 @@ public abstract class PumMatch extends BasePatternMatch {
     else if (!fChild1.equals(other.fChild1)) return false;
     if (fChildN == null) {if (other.fChildN != null) return false;}
     else if (!fChildN.equals(other.fChildN)) return false;
+    if (fDefinition1 == null) {if (other.fDefinition1 != null) return false;}
+    else if (!fDefinition1.equals(other.fDefinition1)) return false;
+    if (fDefinitionN == null) {if (other.fDefinitionN != null) return false;}
+    else if (!fDefinitionN.equals(other.fDefinitionN)) return false;
+    if (fSignature == null) {if (other.fSignature != null) return false;}
+    else if (!fSignature.equals(other.fSignature)) return false;
     return true;
   }
   
@@ -176,7 +244,7 @@ public abstract class PumMatch extends BasePatternMatch {
    * 
    */
   public static PumMatch newEmptyMatch() {
-    return new Mutable(null, null, null);
+    return new Mutable(null, null, null, null, null, null);
   }
   
   /**
@@ -186,11 +254,14 @@ public abstract class PumMatch extends BasePatternMatch {
    * @param pParent the fixed value of pattern parameter parent, or null if not bound.
    * @param pChild1 the fixed value of pattern parameter child1, or null if not bound.
    * @param pChildN the fixed value of pattern parameter childN, or null if not bound.
+   * @param pDefinition1 the fixed value of pattern parameter definition1, or null if not bound.
+   * @param pDefinitionN the fixed value of pattern parameter definitionN, or null if not bound.
+   * @param pSignature the fixed value of pattern parameter signature, or null if not bound.
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static PumMatch newMutableMatch(final TClass pParent, final TClass pChild1, final TClass pChildN) {
-    return new Mutable(pParent, pChild1, pChildN);
+  public static PumMatch newMutableMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+    return new Mutable(pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature);
   }
   
   /**
@@ -200,16 +271,19 @@ public abstract class PumMatch extends BasePatternMatch {
    * @param pParent the fixed value of pattern parameter parent, or null if not bound.
    * @param pChild1 the fixed value of pattern parameter child1, or null if not bound.
    * @param pChildN the fixed value of pattern parameter childN, or null if not bound.
+   * @param pDefinition1 the fixed value of pattern parameter definition1, or null if not bound.
+   * @param pDefinitionN the fixed value of pattern parameter definitionN, or null if not bound.
+   * @param pSignature the fixed value of pattern parameter signature, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public static PumMatch newMatch(final TClass pParent, final TClass pChild1, final TClass pChildN) {
-    return new Immutable(pParent, pChild1, pChildN);
+  public static PumMatch newMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+    return new Immutable(pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature);
   }
   
   private static final class Mutable extends PumMatch {
-    Mutable(final TClass pParent, final TClass pChild1, final TClass pChildN) {
-      super(pParent, pChild1, pChildN);
+    Mutable(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+      super(pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature);
     }
     
     @Override
@@ -219,8 +293,8 @@ public abstract class PumMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends PumMatch {
-    Immutable(final TClass pParent, final TClass pChild1, final TClass pChildN) {
-      super(pParent, pChild1, pChildN);
+    Immutable(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+      super(pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature);
     }
     
     @Override

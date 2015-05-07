@@ -2,4 +2,7 @@
   <extension id="hu.bme.mit.ttc.refactoring.patterns.Refactoring" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.ttc.refactoring.patterns.Refactoring" id="hu.bme.mit.ttc.refactoring.patterns.Refactoring"/>
   </extension>
+  <extension id="hu.bme.mit.ttc.refactoring.patterns.RefactoringQueries" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.ttc.refactoring.patterns.RefactoringQueries" id="hu.bme.mit.ttc.refactoring.patterns.RefactoringQueries"/>
+  </extension>
 </plugin>

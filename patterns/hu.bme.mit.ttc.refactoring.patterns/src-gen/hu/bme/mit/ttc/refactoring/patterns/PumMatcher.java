@@ -1,6 +1,8 @@
 package hu.bme.mit.ttc.refactoring.patterns;
 
 import TypeGraphBasic.TClass;
+import TypeGraphBasic.TMethodDefinition;
+import TypeGraphBasic.TMethodSignature;
 import hu.bme.mit.ttc.refactoring.patterns.PumMatch;
 import hu.bme.mit.ttc.refactoring.patterns.util.PumQuerySpecification;
 import java.util.Collection;
@@ -27,7 +29,7 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern pum(parent, child1, childN) {
+ * pattern pum(parent, child1, childN, definition1, definitionN, signature) {
  * 	TClass.childClasses(parent, child1);
  * 	TClass.childClasses(parent, childN);
  * 
@@ -71,6 +73,12 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
   
   private final static int POSITION_CHILDN = 2;
   
+  private final static int POSITION_DEFINITION1 = 3;
+  
+  private final static int POSITION_DEFINITIONN = 4;
+  
+  private final static int POSITION_SIGNATURE = 5;
+  
   private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(PumMatcher.class);
   
   /**
@@ -109,11 +117,14 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @param pParent the fixed value of pattern parameter parent, or null if not bound.
    * @param pChild1 the fixed value of pattern parameter child1, or null if not bound.
    * @param pChildN the fixed value of pattern parameter childN, or null if not bound.
+   * @param pDefinition1 the fixed value of pattern parameter definition1, or null if not bound.
+   * @param pDefinitionN the fixed value of pattern parameter definitionN, or null if not bound.
+   * @param pSignature the fixed value of pattern parameter signature, or null if not bound.
    * @return matches represented as a PumMatch object.
    * 
    */
-  public Collection<PumMatch> getAllMatches(final TClass pParent, final TClass pChild1, final TClass pChildN) {
-    return rawGetAllMatches(new Object[]{pParent, pChild1, pChildN});
+  public Collection<PumMatch> getAllMatches(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+    return rawGetAllMatches(new Object[]{pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature});
   }
   
   /**
@@ -122,11 +133,14 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @param pParent the fixed value of pattern parameter parent, or null if not bound.
    * @param pChild1 the fixed value of pattern parameter child1, or null if not bound.
    * @param pChildN the fixed value of pattern parameter childN, or null if not bound.
+   * @param pDefinition1 the fixed value of pattern parameter definition1, or null if not bound.
+   * @param pDefinitionN the fixed value of pattern parameter definitionN, or null if not bound.
+   * @param pSignature the fixed value of pattern parameter signature, or null if not bound.
    * @return a match represented as a PumMatch object, or null if no match is found.
    * 
    */
-  public PumMatch getOneArbitraryMatch(final TClass pParent, final TClass pChild1, final TClass pChildN) {
-    return rawGetOneArbitraryMatch(new Object[]{pParent, pChild1, pChildN});
+  public PumMatch getOneArbitraryMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+    return rawGetOneArbitraryMatch(new Object[]{pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature});
   }
   
   /**
@@ -135,11 +149,14 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @param pParent the fixed value of pattern parameter parent, or null if not bound.
    * @param pChild1 the fixed value of pattern parameter child1, or null if not bound.
    * @param pChildN the fixed value of pattern parameter childN, or null if not bound.
+   * @param pDefinition1 the fixed value of pattern parameter definition1, or null if not bound.
+   * @param pDefinitionN the fixed value of pattern parameter definitionN, or null if not bound.
+   * @param pSignature the fixed value of pattern parameter signature, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final TClass pParent, final TClass pChild1, final TClass pChildN) {
-    return rawHasMatch(new Object[]{pParent, pChild1, pChildN});
+  public boolean hasMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+    return rawHasMatch(new Object[]{pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature});
   }
   
   /**
@@ -147,11 +164,14 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @param pParent the fixed value of pattern parameter parent, or null if not bound.
    * @param pChild1 the fixed value of pattern parameter child1, or null if not bound.
    * @param pChildN the fixed value of pattern parameter childN, or null if not bound.
+   * @param pDefinition1 the fixed value of pattern parameter definition1, or null if not bound.
+   * @param pDefinitionN the fixed value of pattern parameter definitionN, or null if not bound.
+   * @param pSignature the fixed value of pattern parameter signature, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final TClass pParent, final TClass pChild1, final TClass pChildN) {
-    return rawCountMatches(new Object[]{pParent, pChild1, pChildN});
+  public int countMatches(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+    return rawCountMatches(new Object[]{pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature});
   }
   
   /**
@@ -159,11 +179,14 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @param pParent the fixed value of pattern parameter parent, or null if not bound.
    * @param pChild1 the fixed value of pattern parameter child1, or null if not bound.
    * @param pChildN the fixed value of pattern parameter childN, or null if not bound.
+   * @param pDefinition1 the fixed value of pattern parameter definition1, or null if not bound.
+   * @param pDefinitionN the fixed value of pattern parameter definitionN, or null if not bound.
+   * @param pSignature the fixed value of pattern parameter signature, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final IMatchProcessor<? super PumMatch> processor) {
-    rawForEachMatch(new Object[]{pParent, pChild1, pChildN}, processor);
+  public void forEachMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature, final IMatchProcessor<? super PumMatch> processor) {
+    rawForEachMatch(new Object[]{pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature}, processor);
   }
   
   /**
@@ -172,12 +195,15 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @param pParent the fixed value of pattern parameter parent, or null if not bound.
    * @param pChild1 the fixed value of pattern parameter child1, or null if not bound.
    * @param pChildN the fixed value of pattern parameter childN, or null if not bound.
+   * @param pDefinition1 the fixed value of pattern parameter definition1, or null if not bound.
+   * @param pDefinitionN the fixed value of pattern parameter definitionN, or null if not bound.
+   * @param pSignature the fixed value of pattern parameter signature, or null if not bound.
    * @param processor the action that will process the selected match.
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final IMatchProcessor<? super PumMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pParent, pChild1, pChildN}, processor);
+  public boolean forOneArbitraryMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature, final IMatchProcessor<? super PumMatch> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature}, processor);
   }
   
   /**
@@ -187,11 +213,14 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @param pParent the fixed value of pattern parameter parent, or null if not bound.
    * @param pChild1 the fixed value of pattern parameter child1, or null if not bound.
    * @param pChildN the fixed value of pattern parameter childN, or null if not bound.
+   * @param pDefinition1 the fixed value of pattern parameter definition1, or null if not bound.
+   * @param pDefinitionN the fixed value of pattern parameter definitionN, or null if not bound.
+   * @param pSignature the fixed value of pattern parameter signature, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public PumMatch newMatch(final TClass pParent, final TClass pChild1, final TClass pChildN) {
-    return PumMatch.newMatch(pParent, pChild1, pChildN);
+  public PumMatch newMatch(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+    return PumMatch.newMatch(pParent, pChild1, pChildN, pDefinition1, pDefinitionN, pSignature);
   }
   
   /**
@@ -228,11 +257,14 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<TClass> getAllValuesOfparent(final TClass pChild1, final TClass pChildN) {
+  public Set<TClass> getAllValuesOfparent(final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
     return rawAccumulateAllValuesOfparent(new Object[]{
     null, 
     pChild1, 
-    pChildN
+    pChildN, 
+    pDefinition1, 
+    pDefinitionN, 
+    pSignature
     });
   }
   
@@ -270,11 +302,14 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<TClass> getAllValuesOfchild1(final TClass pParent, final TClass pChildN) {
+  public Set<TClass> getAllValuesOfchild1(final TClass pParent, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
     return rawAccumulateAllValuesOfchild1(new Object[]{
     pParent, 
     null, 
-    pChildN
+    pChildN, 
+    pDefinition1, 
+    pDefinitionN, 
+    pSignature
     });
   }
   
@@ -312,10 +347,148 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<TClass> getAllValuesOfchildN(final TClass pParent, final TClass pChild1) {
+  public Set<TClass> getAllValuesOfchildN(final TClass pParent, final TClass pChild1, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
     return rawAccumulateAllValuesOfchildN(new Object[]{
     pParent, 
     pChild1, 
+    null, 
+    pDefinition1, 
+    pDefinitionN, 
+    pSignature
+    });
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for definition1.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  protected Set<TMethodDefinition> rawAccumulateAllValuesOfdefinition1(final Object[] parameters) {
+    Set<TMethodDefinition> results = new HashSet<TMethodDefinition>();
+    rawAccumulateAllValues(POSITION_DEFINITION1, parameters, results);
+    return results;
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for definition1.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TMethodDefinition> getAllValuesOfdefinition1() {
+    return rawAccumulateAllValuesOfdefinition1(emptyArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for definition1.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TMethodDefinition> getAllValuesOfdefinition1(final PumMatch partialMatch) {
+    return rawAccumulateAllValuesOfdefinition1(partialMatch.toArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for definition1.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TMethodDefinition> getAllValuesOfdefinition1(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinitionN, final TMethodSignature pSignature) {
+    return rawAccumulateAllValuesOfdefinition1(new Object[]{
+    pParent, 
+    pChild1, 
+    pChildN, 
+    null, 
+    pDefinitionN, 
+    pSignature
+    });
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for definitionN.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  protected Set<TMethodDefinition> rawAccumulateAllValuesOfdefinitionN(final Object[] parameters) {
+    Set<TMethodDefinition> results = new HashSet<TMethodDefinition>();
+    rawAccumulateAllValues(POSITION_DEFINITIONN, parameters, results);
+    return results;
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for definitionN.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TMethodDefinition> getAllValuesOfdefinitionN() {
+    return rawAccumulateAllValuesOfdefinitionN(emptyArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for definitionN.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TMethodDefinition> getAllValuesOfdefinitionN(final PumMatch partialMatch) {
+    return rawAccumulateAllValuesOfdefinitionN(partialMatch.toArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for definitionN.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TMethodDefinition> getAllValuesOfdefinitionN(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodSignature pSignature) {
+    return rawAccumulateAllValuesOfdefinitionN(new Object[]{
+    pParent, 
+    pChild1, 
+    pChildN, 
+    pDefinition1, 
+    null, 
+    pSignature
+    });
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for signature.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  protected Set<TMethodSignature> rawAccumulateAllValuesOfsignature(final Object[] parameters) {
+    Set<TMethodSignature> results = new HashSet<TMethodSignature>();
+    rawAccumulateAllValues(POSITION_SIGNATURE, parameters, results);
+    return results;
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for signature.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TMethodSignature> getAllValuesOfsignature() {
+    return rawAccumulateAllValuesOfsignature(emptyArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for signature.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TMethodSignature> getAllValuesOfsignature(final PumMatch partialMatch) {
+    return rawAccumulateAllValuesOfsignature(partialMatch.toArray());
+  }
+  
+  /**
+   * Retrieve the set of values that occur in matches for signature.
+   * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
+   * 
+   */
+  public Set<TMethodSignature> getAllValuesOfsignature(final TClass pParent, final TClass pChild1, final TClass pChildN, final TMethodDefinition pDefinition1, final TMethodDefinition pDefinitionN) {
+    return rawAccumulateAllValuesOfsignature(new Object[]{
+    pParent, 
+    pChild1, 
+    pChildN, 
+    pDefinition1, 
+    pDefinitionN, 
     null
     });
   }
@@ -323,7 +496,7 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
   @Override
   protected PumMatch tupleToMatch(final Tuple t) {
     try {
-    	return PumMatch.newMatch((TypeGraphBasic.TClass) t.get(POSITION_PARENT), (TypeGraphBasic.TClass) t.get(POSITION_CHILD1), (TypeGraphBasic.TClass) t.get(POSITION_CHILDN));
+    	return PumMatch.newMatch((TypeGraphBasic.TClass) t.get(POSITION_PARENT), (TypeGraphBasic.TClass) t.get(POSITION_CHILD1), (TypeGraphBasic.TClass) t.get(POSITION_CHILDN), (TypeGraphBasic.TMethodDefinition) t.get(POSITION_DEFINITION1), (TypeGraphBasic.TMethodDefinition) t.get(POSITION_DEFINITIONN), (TypeGraphBasic.TMethodSignature) t.get(POSITION_SIGNATURE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -333,7 +506,7 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
   @Override
   protected PumMatch arrayToMatch(final Object[] match) {
     try {
-    	return PumMatch.newMatch((TypeGraphBasic.TClass) match[POSITION_PARENT], (TypeGraphBasic.TClass) match[POSITION_CHILD1], (TypeGraphBasic.TClass) match[POSITION_CHILDN]);
+    	return PumMatch.newMatch((TypeGraphBasic.TClass) match[POSITION_PARENT], (TypeGraphBasic.TClass) match[POSITION_CHILD1], (TypeGraphBasic.TClass) match[POSITION_CHILDN], (TypeGraphBasic.TMethodDefinition) match[POSITION_DEFINITION1], (TypeGraphBasic.TMethodDefinition) match[POSITION_DEFINITIONN], (TypeGraphBasic.TMethodSignature) match[POSITION_SIGNATURE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -343,7 +516,7 @@ public class PumMatcher extends BaseMatcher<PumMatch> {
   @Override
   protected PumMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return PumMatch.newMutableMatch((TypeGraphBasic.TClass) match[POSITION_PARENT], (TypeGraphBasic.TClass) match[POSITION_CHILD1], (TypeGraphBasic.TClass) match[POSITION_CHILDN]);
+    	return PumMatch.newMutableMatch((TypeGraphBasic.TClass) match[POSITION_PARENT], (TypeGraphBasic.TClass) match[POSITION_CHILD1], (TypeGraphBasic.TClass) match[POSITION_CHILDN], (TypeGraphBasic.TMethodDefinition) match[POSITION_DEFINITION1], (TypeGraphBasic.TMethodDefinition) match[POSITION_DEFINITIONN], (TypeGraphBasic.TMethodSignature) match[POSITION_SIGNATURE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

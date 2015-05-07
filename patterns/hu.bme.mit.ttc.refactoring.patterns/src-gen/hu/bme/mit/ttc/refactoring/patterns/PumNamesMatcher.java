@@ -29,7 +29,7 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * // Pull Up Method refactoring
  * 
  * pattern pumNames(parentName, child1Name, childNName) {
- * 	find pum(parent, child1, childN);
+ * 	find pum(parent, child1, childN, _, _, _);
  * 	TClass.tName(parent, parentName);
  * 	TClass.tName(child1, child1Name);
  * 	TClass.tName(childN, childNName);

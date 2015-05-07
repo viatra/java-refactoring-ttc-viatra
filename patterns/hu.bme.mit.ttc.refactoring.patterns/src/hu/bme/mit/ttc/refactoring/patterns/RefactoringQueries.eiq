@@ -48,7 +48,7 @@ pattern classes(class) {
 // Pull Up Method refactoring
 
 pattern pumNames(parentName, child1Name, childNName) {
-	find pum(parent, child1, childN);
+	find pum(parent, child1, childN, _, _, _);
 	TClass.tName(parent, parentName);
 	TClass.tName(child1, child1Name);
 	TClass.tName(childN, childNName);
@@ -56,7 +56,7 @@ pattern pumNames(parentName, child1Name, childNName) {
 	check(child1Name < childNName);
 }
 
-pattern pum(parent, child1, childN) {
+pattern pum(parent, child1, childN, definition1, definitionN, signature) {
 	TClass.childClasses(parent, child1);
 	TClass.childClasses(parent, childN);
 

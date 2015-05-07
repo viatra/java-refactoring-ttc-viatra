@@ -62,7 +62,7 @@ public final class PumQuerySpecification extends BaseGeneratedEMFQuerySpecificat
   
   @Override
   public PumMatch newMatch(final Object... parameters) {
-    return PumMatch.newMatch((TypeGraphBasic.TClass) parameters[0], (TypeGraphBasic.TClass) parameters[1], (TypeGraphBasic.TClass) parameters[2]);
+    return PumMatch.newMatch((TypeGraphBasic.TClass) parameters[0], (TypeGraphBasic.TClass) parameters[1], (TypeGraphBasic.TClass) parameters[2], (TypeGraphBasic.TMethodDefinition) parameters[3], (TypeGraphBasic.TMethodDefinition) parameters[4], (TypeGraphBasic.TMethodSignature) parameters[5]);
   }
   
   private static class LazyHolder {
@@ -83,12 +83,12 @@ public final class PumQuerySpecification extends BaseGeneratedEMFQuerySpecificat
     
     @Override
     public List<String> getParameterNames() {
-      return Arrays.asList("parent","child1","childN");
+      return Arrays.asList("parent","child1","childN","definition1","definitionN","signature");
     }
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("parent", "TypeGraphBasic.TClass"),new PParameter("child1", "TypeGraphBasic.TClass"),new PParameter("childN", "TypeGraphBasic.TClass"));
+      return Arrays.asList(new PParameter("parent", "TypeGraphBasic.TClass"),new PParameter("child1", "TypeGraphBasic.TClass"),new PParameter("childN", "TypeGraphBasic.TClass"),new PParameter("definition1", "TypeGraphBasic.TMethodDefinition"),new PParameter("definitionN", "TypeGraphBasic.TMethodDefinition"),new PParameter("signature", "TypeGraphBasic.TMethodSignature"));
     }
     
     @Override
@@ -100,13 +100,13 @@ public final class PumQuerySpecification extends BaseGeneratedEMFQuerySpecificat
       	PVariable var_parent = body.getOrCreateVariableByName("parent");
       	PVariable var_child1 = body.getOrCreateVariableByName("child1");
       	PVariable var_childN = body.getOrCreateVariableByName("childN");
+      	PVariable var_definition1 = body.getOrCreateVariableByName("definition1");
+      	PVariable var_definitionN = body.getOrCreateVariableByName("definitionN");
+      	PVariable var_signature = body.getOrCreateVariableByName("signature");
       	PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       	PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-      	PVariable var_definition1 = body.getOrCreateVariableByName("definition1");
       	PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-      	PVariable var_definitionN = body.getOrCreateVariableByName("definitionN");
       	PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-      	PVariable var_signature = body.getOrCreateVariableByName("signature");
       	PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
       	PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
       	body.setExportedParameters(Arrays.<ExportedParameter>asList(
@@ -114,7 +114,13 @@ public final class PumQuerySpecification extends BaseGeneratedEMFQuerySpecificat
       				
       		new ExportedParameter(body, var_child1, "child1"),
       				
-      		new ExportedParameter(body, var_childN, "childN")
+      		new ExportedParameter(body, var_childN, "childN"),
+      				
+      		new ExportedParameter(body, var_definition1, "definition1"),
+      				
+      		new ExportedParameter(body, var_definitionN, "definitionN"),
+      				
+      		new ExportedParameter(body, var_signature, "signature")
       	));
       	new TypeConstraint(body, new FlatTuple(var_parent), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore", "TClass")));
       	new TypeConstraint(body, new FlatTuple(var_parent, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore", "TClass", "childClasses")));
