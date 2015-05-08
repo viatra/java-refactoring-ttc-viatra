@@ -13,6 +13,7 @@ import org.eclipse.viatra.emf.runtime.rules.batch.BatchTransformationRuleFactory
 import org.eclipse.viatra.emf.runtime.rules.batch.BatchTransformationStatements
 import org.eclipse.viatra.emf.runtime.transformation.batch.BatchTransformation
 import org.eclipse.emf.ecore.util.EcoreUtil
+import TypeGraphBasic.TypeGraph
 
 class RefactoringTransformation {
 	extension BatchTransformationRuleFactory factory = new BatchTransformationRuleFactory
@@ -36,7 +37,9 @@ class RefactoringTransformation {
 		transformation.ruleEngine.logger.level = Level::DEBUG
 	}
 
-	val pullUpRule = createRule.precondition(pum).action [
+	// pull up method
+
+	val pullUpMethodRule = createRule.precondition(pum).action [
 		EcoreUtil.delete(definitionN)
 		child1.defines -= definition1
 		child1.signature -= signature
@@ -46,12 +49,34 @@ class RefactoringTransformation {
 		parent.signature += signature
 	].build
 
-	val firePullUpRule = createRule.precondition(pum).action [
-		fireAllCurrent(pullUpRule)
+	val firePullUpMethodRule = createRule.precondition(pum).action [
+		fireAllCurrent(pullUpMethodRule)
 	].build
-
+	
+	
+	// create superclass
+	
+	// case (a)
+	
+	val createSuperclassARule = createRule.precondition(csA).action [
+		println(csA)
+		val newSuperclass = typeGraphBasicFactory.createTClass()
+		child1.parentClass = newSuperclass
+		childN.parentClass = newSuperclass
+	].build
+	
+	val fireCreateSuperclassARule = createRule.precondition(csA).action [
+		fireAllCurrent(createSuperclassARule);
+	].build
+	
+	// case (b)
+	
+	// this should be done in a similar fashion to case (a)
+	
+	
 	def fire() {
-		firePullUpRule.fireOne
+//		firePullUpMethodRule.fireOne
+//		fireCreateSuperclassARule
 	}
 
 }
