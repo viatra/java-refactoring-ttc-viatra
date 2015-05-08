@@ -39,7 +39,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>hu.bme.mit.ttc.refactoring.Main</mainClass>
+							<mainClass>hu.bme.mit.ttc.refactoring.transformations.TransformationsMain</mainClass>
 							<useUniqueVersions>false</useUniqueVersions>
 						</manifest>
 					</archive>

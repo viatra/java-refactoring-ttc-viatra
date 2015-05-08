@@ -13,7 +13,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 import TypeGraphBasic.TypeGraphBasicPackage;
 
-public class Main {
+public class TransformationsMain {
 	public static void main(String[] args) throws IncQueryException, IOException {
 		// Initializing the EMF package
 		TypeGraphBasicPackage.eINSTANCE.getName();

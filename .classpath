@@ -3,5 +3,28 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="lib/TTCTestInterface.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/guava-14.0.1.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/hamcrest-core-1.1.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/hu.bme.mit.ttc.refactoring.models-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/hu.bme.mit.ttc.refactoring.patterns-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/hu.bme.mit.ttc.refactoring.transformations-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/incquery-runtime-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.emf.common-2.9.1.v20130827-0309.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.emf.ecore-2.9.1.v20130827-0309.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.emf.ecore.xmi-2.9.1.v20130827-0309.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.incquery.runtime-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.incquery.runtime.base-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.incquery.runtime.base.itc-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.incquery.runtime.evm-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.incquery.runtime.matchers-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.incquery.runtime.rete-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.incquery.runtime.rete.recipes-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.viatra.emf.runtime-0.7.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.xtend.lib-2.8.2.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.xtend.lib.macro-2.8.2.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/org.eclipse.xtext.xbase.lib-2.8.2.jar"/>
+	<classpathentry kind="lib" path="lib-transformation/viatra-emf-runtime-0.7.0-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
