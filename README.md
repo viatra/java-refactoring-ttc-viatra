@@ -2,6 +2,8 @@
 
 VIATRA solution for the TTC 2015 Java Refactoring case.
 
+[![Build Status](https://travis-ci.org/FTSRG/java-refactoring-ttc-viatra.svg?branch=master)](https://travis-ci.org/FTSRG/java-refactoring-ttc-viatra)
+
 ## Projects
 
 The solution consists of the following projects, each starting with the `hu.bme.mit.ttc.refactoring.` prefix:
