@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TypeGraphTrace:Trace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TypeGraphBasic="platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore" xmlns:TypeGraphTrace="platform:/plugin/TypeGraphBasic/model/TypeGraphTrace.ecore">
+  <programGraph tName="/tmp/tmp_ttc/hiddenProgram2">
+    <packages tName="hidden">
+      <subpackage tName="hidden.program">
+        <subpackage containedClasses="//@programGraph/@classes.6 //@programGraph/@classes.3 //@programGraph/@classes.2 //@programGraph/@classes.0" tName="hidden.program.two"/>
+      </subpackage>
+    </packages>
+    <methods tName="second">
+      <signatures definitions="//@programGraph/@classes.0/@defines.0 //@programGraph/@classes.2/@defines.1"/>
+    </methods>
+    <methods tName="method">
+      <signatures definitions="//@programGraph/@classes.2/@defines.0 //@programGraph/@classes.6/@defines.0"/>
+    </methods>
+    <methods tName="main">
+      <signatures definitions="//@programGraph/@classes.2/@defines.2" paramList="//@programGraph/@classes.4"/>
+    </methods>
+    <methods tName="third">
+      <signatures definitions="//@programGraph/@classes.6/@defines.1"/>
+    </methods>
+    <fields tName="Lhidden/program/two/ParentClass;.k)I">
+      <signatures definitions="//@programGraph/@classes.3/@defines.0" type="//@programGraph/@classes.5"/>
+    </fields>
+    <classes signature="//@programGraph/@methods.0/@signatures.0" package="//@programGraph/@packages.0/@subpackage.0/@subpackage.0" tName="Lhidden/program/two/ChildClass2;">
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.0/@signatures.0" returnType="//@programGraph/@classes.1"/>
+    </classes>
+    <classes tName="V"/>
+    <classes parentClass="//@programGraph/@classes.3" signature="//@programGraph/@methods.0/@signatures.0 //@programGraph/@methods.2/@signatures.0 //@programGraph/@methods.1/@signatures.0" package="//@programGraph/@packages.0/@subpackage.0/@subpackage.0" tName="Lhidden/program/two/ChildClass1;">
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" access="//@programGraph/@classes.3/@defines.0" signature="//@programGraph/@methods.1/@signatures.0" returnType="//@programGraph/@classes.1"/>
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" access="//@programGraph/@classes.6/@defines.1" signature="//@programGraph/@methods.0/@signatures.0" returnType="//@programGraph/@classes.1"/>
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" access="//@programGraph/@classes.6/@defines.0 //@programGraph/@classes.2/@defines.0" signature="//@programGraph/@methods.2/@signatures.0" returnType="//@programGraph/@classes.1"/>
+    </classes>
+    <classes childClasses="//@programGraph/@classes.6 //@programGraph/@classes.2" signature="//@programGraph/@fields.0/@signatures.0" package="//@programGraph/@packages.0/@subpackage.0/@subpackage.0" tName="Lhidden/program/two/ParentClass;">
+      <defines xsi:type="TypeGraphBasic:TFieldDefinition" signature="//@programGraph/@fields.0/@signatures.0"/>
+    </classes>
+    <classes tName="[Ljava/lang/String;"/>
+    <classes tName="I"/>
+    <classes parentClass="//@programGraph/@classes.3" signature="//@programGraph/@methods.1/@signatures.0 //@programGraph/@methods.3/@signatures.0" package="//@programGraph/@packages.0/@subpackage.0/@subpackage.0" tName="Lhidden/program/two/ChildClass3;">
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" access="//@programGraph/@classes.3/@defines.0" signature="//@programGraph/@methods.1/@signatures.0" returnType="//@programGraph/@classes.1"/>
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.3/@signatures.0" returnType="//@programGraph/@classes.7"/>
+    </classes>
+    <classes tName="Ljava/lang/String;"/>
+  </programGraph>
+  <methodSignatures tMethodSignature="//@programGraph/@methods.1/@signatures.0" signatureString=".method()"/>
+  <methodSignatures tMethodSignature="//@programGraph/@methods.0/@signatures.0" signatureString=".second()"/>
+  <methodSignatures tMethodSignature="//@programGraph/@methods.2/@signatures.0" signatureString=".main([Ljava/lang/String;)"/>
+  <methodSignatures tMethodSignature="//@programGraph/@methods.3/@signatures.0" signatureString=".third()"/>
+  <classLists tClasses="//@programGraph/@classes.2 //@programGraph/@classes.0" concatSignature="Lhidden/program/two/ChildClass1;#Lhidden/program/two/ChildClass2;"/>
+</TypeGraphTrace:Trace>

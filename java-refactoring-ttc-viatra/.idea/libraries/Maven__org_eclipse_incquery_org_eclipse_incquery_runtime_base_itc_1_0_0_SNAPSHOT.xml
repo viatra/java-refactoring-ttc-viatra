@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.eclipse.incquery:org.eclipse.incquery.runtime.base.itc:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/incquery/org.eclipse.incquery.runtime.base.itc/1.0.0-SNAPSHOT/org.eclipse.incquery.runtime.base.itc-1.0.0-20150508.163340-148.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/incquery/org.eclipse.incquery.runtime.base.itc/1.0.0-SNAPSHOT/org.eclipse.incquery.runtime.base.itc-1.0.0-20150508.163340-148-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/incquery/org.eclipse.incquery.runtime.base.itc/1.0.0-SNAPSHOT/org.eclipse.incquery.runtime.base.itc-1.0.0-20150508.163340-148-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

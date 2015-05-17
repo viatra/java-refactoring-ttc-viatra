@@ -1,0 +1,6 @@
+Mintavétel időpontja [ms]	Utolsó 100ms alatt feldolgozott kérések száma [darab]	Utolsó 100ms átlagos kiszolgálási ideje [ms]	Utolsó 100ms CPU kihasználtság [%]	Utolsó 100ms HDD I/O kihasználtság [%]
+500	11	15	12	55
+600	12	20	13	63
+700	21	21	16	87
+800	18	25	17	61
+900	20	27	19	73

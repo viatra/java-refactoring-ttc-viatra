@@ -1,0 +1,7 @@
+jdk:
+  - oraclejdk8  
+script:
+  - ./build.sh
+  - git clone https://github.com/Echtzeitsysteme/java-refactoring-ttc.git
+  - ln -s java-refactoring-ttc/ARTE/ARTE.jar
+  - ./run.sh

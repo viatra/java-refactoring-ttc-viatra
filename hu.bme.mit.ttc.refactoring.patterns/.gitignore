@@ -1,0 +1,5 @@
+src-gen/hu/bme/mit/ttc/refactoring/patterns/.gitignore
+src-gen/hu/bme/mit/ttc/refactoring/patterns/util/.gitignore
+*._trace
+
+/target/

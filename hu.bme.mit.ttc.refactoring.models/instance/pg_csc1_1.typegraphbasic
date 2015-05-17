@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TypeGraphTrace:Trace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TypeGraphBasic="platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore" xmlns:TypeGraphTrace="platform:/plugin/TypeGraphBasic/model/TypeGraphTrace.ecore">
+  <programGraph>
+    <packages containedClasses="//@programGraph/@classes.2 //@programGraph/@classes.0" tName="example04"/>
+    <methods tName="method">
+      <signatures definitions="//@programGraph/@classes.0/@defines.0 //@programGraph/@classes.2/@defines.1"/>
+    </methods>
+    <methods tName="main">
+      <signatures definitions="//@programGraph/@classes.2/@defines.0" paramList="//@programGraph/@classes.3"/>
+    </methods>
+    <classes signature="//@programGraph/@methods.0/@signatures.0" package="//@programGraph/@packages.0" tName="Lexample04/ChildClass2;">
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.0/@signatures.0" returnType="//@programGraph/@classes.1"/>
+    </classes>
+    <classes tName="V"/>
+    <classes signature="//@programGraph/@methods.1/@signatures.0 //@programGraph/@methods.0/@signatures.0" package="//@programGraph/@packages.0" tName="Lexample04/ChildClass1;">
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.1/@signatures.0" returnType="//@programGraph/@classes.1"/>
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.0/@signatures.0" returnType="//@programGraph/@classes.1"/>
+    </classes>
+    <classes tName="[Ljava/lang/String;"/>
+  </programGraph>
+  <methodSignatures tMethodSignature="//@programGraph/@methods.1/@signatures.0" signatureString=".main([Ljava/lang/String;)"/>
+  <methodSignatures tMethodSignature="//@programGraph/@methods.0/@signatures.0" signatureString=".method()"/>
+  <classLists tClasses="//@programGraph/@classes.2 //@programGraph/@classes.0" concatSignature="Lexample04/ChildClass1;#Lexample04/ChildClass2;"/>
+</TypeGraphTrace:Trace>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<TypeGraphTrace:Trace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TypeGraphBasic="platform:/plugin/TypeGraphBasic/model/TypeGraphBasic.ecore" xmlns:TypeGraphTrace="platform:/plugin/TypeGraphBasic/model/TypeGraphTrace.ecore">
+  <programGraph>
+    <packages containedClasses="//@programGraph/@classes.0 //@programGraph/@classes.1 //@programGraph/@classes.5" tName="example01"/>
+    <methods tName="ChildClass2"/>
+    <methods tName="method">
+      <signatures definitions="//@programGraph/@classes.0/@defines.1 //@programGraph/@classes.5/@defines.1" paramList="//@programGraph/@classes.2 //@programGraph/@classes.3"/>
+    </methods>
+    <methods tName="ChildClass1"/>
+    <methods tName="main">
+      <signatures definitions="//@programGraph/@classes.5/@defines.2" paramList="//@programGraph/@classes.6"/>
+    </methods>
+    <methods tName="ParentClass">
+      <signatures definitions="//@programGraph/@classes.0/@defines.0 //@programGraph/@classes.5/@defines.0 //@programGraph/@classes.1/@defines.0"/>
+    </methods>
+    <classes parentClass="//@programGraph/@classes.1" signature="//@programGraph/@methods.4/@signatures.0 //@programGraph/@methods.1/@signatures.0" package="//@programGraph/@packages.0" tName="Lexample01/ChildClass2;">
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.4/@signatures.0"/>
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.1/@signatures.0" returnType="//@programGraph/@classes.4"/>
+    </classes>
+    <classes childClasses="//@programGraph/@classes.0 //@programGraph/@classes.5" signature="//@programGraph/@methods.4/@signatures.0" package="//@programGraph/@packages.0" tName="Lexample01/ParentClass;">
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.4/@signatures.0"/>
+    </classes>
+    <classes tName="Ljava/lang/String;"/>
+    <classes tName="I"/>
+    <classes tName="V"/>
+    <classes parentClass="//@programGraph/@classes.1" signature="//@programGraph/@methods.4/@signatures.0 //@programGraph/@methods.1/@signatures.0 //@programGraph/@methods.3/@signatures.0" package="//@programGraph/@packages.0" tName="Lexample01/ChildClass1;">
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.4/@signatures.0"/>
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" signature="//@programGraph/@methods.1/@signatures.0" returnType="//@programGraph/@classes.4"/>
+      <defines xsi:type="TypeGraphBasic:TMethodDefinition" access="//@programGraph/@classes.0/@defines.1 //@programGraph/@classes.5/@defines.1" signature="//@programGraph/@methods.3/@signatures.0" returnType="//@programGraph/@classes.4"/>
+    </classes>
+    <classes tName="[Ljava/lang/String;"/>
+  </programGraph>
+  <methodSignatures tMethodSignature="//@programGraph/@methods.4/@signatures.0" signatureString=".ParentClass()"/>
+  <methodSignatures tMethodSignature="//@programGraph/@methods.1/@signatures.0" signatureString=".method(Ljava/lang/String;I)"/>
+  <methodSignatures tMethodSignature="//@programGraph/@methods.3/@signatures.0" signatureString=".main([Ljava/lang/String;)"/>
+</TypeGraphTrace:Trace>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="hu.bme.mit.ttc.refactoring.patterns.TraceQueries" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.ttc.refactoring.patterns.TraceQueries" id="hu.bme.mit.ttc.refactoring.patterns.TraceQueries"/>
+  </extension>
+  <extension id="hu.bme.mit.ttc.refactoring.patterns.CSCQueries" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.ttc.refactoring.patterns.CSCQueries" id="hu.bme.mit.ttc.refactoring.patterns.CSCQueries"/>
+  </extension>
+  <extension id="hu.bme.mit.ttc.refactoring.patterns.PUMQueries" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.ttc.refactoring.patterns.PUMQueries" id="hu.bme.mit.ttc.refactoring.patterns.PUMQueries"/>
+  </extension>
+</plugin>

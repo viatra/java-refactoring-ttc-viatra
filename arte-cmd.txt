@@ -1,0 +1,2 @@
+load --solution hu.bme.mit.ttc.refactoring.solution/target/hu.bme.mit.ttc.refactoring.solution-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+execute --all
