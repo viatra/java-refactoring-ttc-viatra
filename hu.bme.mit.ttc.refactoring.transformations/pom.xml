@@ -133,12 +133,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.google.code.maven-play-plugin.org.eclipse.jdt</groupId>
-			<artifactId>org.eclipse.jdt.core</artifactId>
-			<version>3.10.0.v20140604-1726</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.eclipse.core</groupId>
 			<artifactId>runtime</artifactId>
 			<version>3.10.0-v20140318-2214</version>
@@ -150,6 +144,12 @@
 			<version>3.9.1.v20140825-1431</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.eclipse.jdt</groupId>
+			<artifactId>org.eclipse.jdt.core</artifactId>
+			<version>3.12.0.v20150913-1717</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.eclipse.text</groupId>
 			<artifactId>org.eclipse.text</artifactId>
